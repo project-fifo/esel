@@ -1,0 +1,15 @@
+%% -*- erlang -*-
+%% @doc CA Certificat (ca.pem) file
+{mapping, "ssl.ca_cert", "esel.ca_cert",
+ [{default, "ca/ca.pem"},
+  {datatype, file}]}.
+
+%% @doc CA Key (key.pem) file
+{mapping, "ssl.ca_key", "esel.ca_key",
+ [{default, "ca/key.pem"},
+  {datatype, file}]}.
+
+%% @doc CA Password to unloick key
+{mapping, "ssl.ca_pass", "esel.ca_pass",
+ [{default, "secret"},
+  {datatype, string}]}.
