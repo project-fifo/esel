@@ -45,7 +45,7 @@ start_link() ->
 %%
 %% @end
 %%--------------------------------------------------------------------
--spec genrsa(binary()) -> {ok, Binary} | {error, term()}.
+-spec genrsa(binary()) -> {ok, binary()} | {error, term()}.
 genrsa(Bytes) when is_integer(Bytes) ->
     gen_server:call(?SERVER, {genrsa, Bytes}, 60000).
 
@@ -55,7 +55,7 @@ genrsa(Bytes) when is_integer(Bytes) ->
 %%
 %% @end
 %%--------------------------------------------------------------------
--spec req(string(), binary()) -> {ok, Binary} | {error, term()}.
+-spec req(string(), binary()) -> {ok, binary()} | {error, term()}.
 req(Subject, Key) when is_binary(Key) ->
     gen_server:call(?SERVER, {req, Subject, Key}).
 
@@ -65,7 +65,7 @@ req(Subject, Key) when is_binary(Key) ->
 %%
 %% @end
 %%--------------------------------------------------------------------
--spec req(pos_integer(), binary()) -> {ok, Binary} | {error, term()}.
+-spec sign_csr(pos_integer(), binary()) -> {ok, binary()} | {error, term()}.
 sign_csr(Days, CSR) when is_binary(CSR), is_integer(Days), Days > 0 ->
     gen_server:call(?SERVER, {sign_csr, Days, CSR}).
 
