@@ -1,10 +1,11 @@
 {application,esel,
              [{description,"An wrapper around openssl"},
-              {vsn,"0.1.1"},
+              {vsn,"0.1.2"},
               {registered,[]},
               {applications,[kernel,stdlib,public_key]},
               {env,[]},
               {modules,[]},
+              {mod, {'esel_app', []}},
               {maintainers,["Heinz N. Gies <heinz@project-fifo.net>"]},
               {licenses,["MIT"]},
               {links,[]}]}.
